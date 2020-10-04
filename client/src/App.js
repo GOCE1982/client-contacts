@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 import './App.css';
 import PrivateRoute from './components/routing/PrivateRoute';
 import setAuthToken from './utils/setAuthToken';
@@ -21,11 +22,13 @@ if(localStorage.token) {
 		}
 
 const App = () => {
+	const history = createBrowserHistory();
+
   return (
 		<AuthState>
 			<ContactState>
 				<AlertState>
-					<Router>
+					<Router history={history}>
 						<Fragment>
 							<Navbar />
 							<div className="container">
