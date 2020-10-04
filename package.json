@@ -1,5 +1,5 @@
 {
-  "name": "client-connections",
+  "name": "client-contacts",
   "version": "1.0.0",
   "description": "App for keeping client records",
   "main": "server.js",
